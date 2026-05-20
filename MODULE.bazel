@@ -1,0 +1,12 @@
+module(name = "nub")
+
+bazel_dep(name = "rules_cc", version = "0.2.18")
+bazel_dep(name = "toolchains_llvm")
+
+git_override(
+    module_name = "toolchains_llvm",
+    remote = "https://github.com/bazel-contrib/toolchains_llvm.git",
+    commit = "8e4c924c85f9f3e980d61de097353324b6c6e8df",
+)
+
+include("//bazel:llvm.MODULE.bazel")
