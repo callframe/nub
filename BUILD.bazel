@@ -1,0 +1,4 @@
+alias(
+    name = "nub",
+    actual = "//src/nub:nub"
+)
