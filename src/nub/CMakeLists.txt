@@ -1,6 +1,7 @@
 add_executable(nub)
-nub_target_policies(nub "${NUB_DIR}")
+nub_target_policies(nub)
 
 target_sources(nub PRIVATE
-    "${NUB_DIR}/main.cc"
+    FILES
+        "${NUB_DIR}/main.cc"
 )
