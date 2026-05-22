@@ -1,0 +1,4 @@
+set(NUB_TARGETS_DIR "${NUB_CMAKE_DIR}/targets")
+list(APPEND CMAKE_MODULE_PATH "${NUB_TARGETS_DIR}")
+
+include(NubBin)
