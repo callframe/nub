@@ -1,0 +1,9 @@
+filegroup(
+    name = "srcs",
+    hdrs = [
+        "bits.h",
+        "macro.h",
+        "platform.h"
+    ],
+    visibility = ["@nub//src:__pkg__"],
+)

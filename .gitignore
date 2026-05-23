@@ -1,7 +1,3 @@
-build*/
-out*/
-
-*.o
-*.a
-*.so
-*.json
+.cache/
+bazel-*
+external/

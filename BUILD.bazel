@@ -1,0 +1,23 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary")
+
+COPTS = [
+    "-Wall", "-Wextra", "-pedantic"
+]
+
+cc_library(
+    name = "nub",
+    srcs = [
+
+    ],
+    copts = COPTS,
+    visibility = ["//visibility:public"],
+)
+
+cc_binary(
+    name = "nubx",
+    srcs = ["@nub//nubx:srcs"],
+    deps = [
+        "@nub//:nub",
+    ],
+    copts = COPTS,
+)
