@@ -6,10 +6,10 @@ COPTS = [
 
 cc_library(
     name = "nub",
-    srcs = [
-
-    ],
     copts = COPTS,
+    deps = [
+        
+    ],
     visibility = ["//visibility:public"],
 )
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/base/macro.h"
-#include "src/base/platform.h"
+#include "nub/base/macro.h"
+#include "nub/base/platform.h"
 #include <cstdint>
 
 NUB_NAMESPACE_BEGIN
@@ -21,11 +21,11 @@ using i16 = std::int16_t;
 using i32 = std::int32_t;
 using i64 = std::int64_t;
 
-#if defined(NUB_PLAT_X86_64)
+#if defined(NUB_PLATFORM_X86_64)
 using usize = u64;
 using isize = i64;
 
-#elif defined(NUB_PLAT_I386)
+#elif defined(NUB_PLATFORM_I386)
 using usize = u32;
 using isize = i32;
 

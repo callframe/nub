@@ -1,0 +1,13 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "srcs",
+    hdrs = [
+        "script.h"
+    ],
+    deps = [
+        "@nub//nub/base:srcs",
+        "@nub//nub/chars:srcs",
+    ],
+    visibility = ["@nub//:__pkg__"],
+)

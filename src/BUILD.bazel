@@ -1,7 +1,0 @@
-filegroup(
-    name = "srcs",
-    srcs = [
-        "@nub//src/base:srcs",
-    ],
-    visibility = ["@nub//:__pkg__"],
-)
