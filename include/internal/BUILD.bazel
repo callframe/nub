@@ -3,7 +3,8 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 cc_library(
     name = "srcs",
     hdrs = [
-        "script.h"
+        "bits.h",
+        "platform.h",
     ],
     visibility = ["@nub//:__pkg__"],
 )

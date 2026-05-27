@@ -8,7 +8,7 @@ cc_library(
     name = "nub",
     copts = COPTS,
     deps = [
-        "@nub//deps:simdutf",
+        "@nub//include/internal:srcs",
     ],
     visibility = ["//visibility:public"],
 )
