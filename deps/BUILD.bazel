@@ -1,0 +1,19 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "simdutf_srcs",
+    srcs = glob(["simdutf/**/*"])
+)
+
+cmake(
+    name = "simdutf",
+    lib_name = "libsimdutf",
+    lib_source = ":simdutf_srcs",
+    generate_args = ["-GNinja"],
+    cache_entries = {
+        "SIMDUTF_TESTS": "OFF",
+        "SIMDUTF_TOOLS": "OFF",
+        "SIMDUTF_ICONV": "OFF",
+    },
+    visibility = ["//:__pkg__"],
+)
