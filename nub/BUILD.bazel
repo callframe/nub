@@ -1,7 +1,7 @@
 filegroup(
     name = "srcs",
     srcs = [
-        "nubx.rs",
+        "nub.rs",
     ],
     visibility = ["//:__pkg__"],
 )

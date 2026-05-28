@@ -1,23 +1,19 @@
-load("@rules_cc//cc:defs.bzl", "cc_library", "cc_binary")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_binary")
 
-COPTS = [
-    "-Wall", "-Wextra", "-pedantic"
-]
-
-cc_library(
+rust_library(
     name = "nub",
-    copts = COPTS,
+    edition = "2024",
+    srcs = ["@nub//nub:srcs"],
     deps = [
-        "@nub//include/internal:srcs",
-    ],
-    visibility = ["//visibility:public"],
+        "@nub//deps:simdutf_bindgen",
+    ]
 )
 
-cc_binary(
+rust_binary(
     name = "nubx",
+    edition = "2024",
     srcs = ["@nub//nubx:srcs"],
     deps = [
         "@nub//:nub",
     ],
-    copts = COPTS,
 )

@@ -1,4 +1,5 @@
 load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+load("@rules_rust_bindgen//:defs.bzl", "rust_bindgen_library")
 
 filegroup(
     name = "simdutf_srcs",
@@ -15,5 +16,16 @@ cmake(
         "SIMDUTF_TOOLS": "OFF",
         "SIMDUTF_ICONV": "OFF",
     },
-    visibility = ["//:__pkg__"],
+)
+
+rust_bindgen_library(
+    name = "simdutf_bindgen",
+    header = "simdutf/include/simdutf_c.h",
+    cc_lib = ":simdutf",
+    edition = "2021",
+    bindgen_flags = [
+        "--allowlist-function=simdutf_.*",
+        "--allowlist-type=simdutf_.*",
+        "--allowlist-var=simdutf_.*",
+    ]
 )
